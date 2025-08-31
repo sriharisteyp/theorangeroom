@@ -15,12 +15,14 @@ import EventDetail from "./pages/EventDetail";
 import PastEventDetail from "./pages/PastEventDetail";
 import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
+import { Analytics } from "@vercel/analytics/next"
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+    <Analytics/>
       <Toaster />
       <Sonner />
       <BrowserRouter>
