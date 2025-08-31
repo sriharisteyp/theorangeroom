@@ -16,7 +16,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 rounded-full flex items-center justify-center">
-              <img src="/public/logo.png" alt="The Orange Room Logo" />
+              <img src="/logo.png" alt="The Orange Room Logo" />
             </div>
             <span className="text-xl font-bold text-foreground">The Orange Room</span>
           </Link>
