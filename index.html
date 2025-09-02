@@ -35,6 +35,39 @@
 
   <body>
     <div id="root"></div>
+    <!-- Fallback loader shown before React mounts -->
+    <div
+      id="page-loader"
+      style="
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 9999;
+      "
+    >
+      <div
+        style="
+          width: 64px;
+          height: 64px;
+          border-top: 4px solid #fb923c;
+          border-radius: 9999px;
+          animation: spin 1s linear infinite;
+        "
+      ></div>
+    </div>
+    <style>
+      @keyframes spin {
+        from {
+          transform: rotate(0);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

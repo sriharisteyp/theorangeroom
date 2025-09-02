@@ -14,13 +14,15 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center">
-              <img src="/logo.png" alt="The Orange Room Logo" />
-            </div>
-            <span className="text-xl font-bold text-foreground">The Orange Room</span>
-          </Link>
-
+        <Link to="/" className="flex items-center space-x-2">
+          <div className="flex items-center justify-center">
+            <img
+              src="/logo.png"   // <-- use your transparent PNG instead of .jpg
+              alt="The Orange Room Logo"
+              className="w-[150px] h-auto object-contain"
+            />
+          </div>
+        </Link>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-foreground hover:text-primary transition-colors">
@@ -32,17 +34,17 @@ const Header = () => {
             <Link to="/services" className="text-foreground hover:text-primary transition-colors">
               Services
             </Link>
-            <Link to="/get-help" className="text-foreground hover:text-primary transition-colors">
-              Get Help
-            </Link>
+            
             <Link to="/events-blog" className="text-foreground hover:text-primary transition-colors">
               Events & Blog
             </Link>
             <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
               Contact
             </Link>
-            <Button className="orange-gradient text-white font-medium px-6 hover:scale-105 transition-transform">
-              Get Support
+            <Button className="orange-gradient  font-medium px-6 hover:scale-105 transition-transform">
+              <Link to="/get-help" className="text-foreground  transition-colors text-white">
+              Get Help
+            </Link>
             </Button>
           </div>
 

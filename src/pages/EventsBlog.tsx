@@ -32,7 +32,17 @@ const EventsBlog = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {upcomingEvents.map((event) => (
-                <Card key={event.id} className="gentle-shadow hover:soft-shadow transition-all duration-300">
+                <Card key={event.id} className="gentle-shadow hover:soft-shadow transition-all duration-300 overflow-hidden">
+                  {(((event as Partial<{ posterImage?: string; image?: string }>).posterImage) ?? ((event as Partial<{ posterImage?: string; image?: string }>).image)) && (
+                    <div className="aspect-video bg-muted flex items-center justify-center overflow-hidden">
+                      <img
+                        src={((event as Partial<{ posterImage?: string; image?: string }>).posterImage) ?? ((event as Partial<{ posterImage?: string; image?: string }>).image)}
+                        loading="lazy"
+                        alt={`${event.title} poster`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm text-primary font-medium bg-primary/10 px-2 py-1 rounded">
@@ -93,6 +103,7 @@ const EventsBlog = () => {
                     <img 
                       src={event.image} 
                       alt={event.title}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>

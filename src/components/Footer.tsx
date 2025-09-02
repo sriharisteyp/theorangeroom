@@ -10,12 +10,13 @@ const Footer = () => {
           
           {/* Logo & Description */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center">
-                <img src="/logo.png" alt="The Orange Room Logo" />
-              </div>
-              <span className="text-xl font-bold text-foreground">The Orange Room</span>
-            </div>
+            <div className="flex">
+            <img
+              src="/logo.png"   // <-- use your transparent PNG instead of .jpg
+              alt="The Orange Room Logo"
+              className="w-[150px] h-auto object-contain"
+            />
+          </div>
             <p className="text-muted-foreground leading-relaxed">
               A safe, stigma-free mental health counseling space for youth in Trivandrum, 
               powered by Let's Live Kerala.
